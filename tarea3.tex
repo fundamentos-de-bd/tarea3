@@ -1,4 +1,6 @@
 \documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
 
 % Formato de página
 \usepackage[letterpaper, margin = 1.5cm]{geometry}
@@ -10,6 +12,7 @@
 \usepackage{graphicx}
 \usepackage{wrapfig}
 \graphicspath{{img/}}
+\usepackage{float}
 
 \begin{document}
     \title{
@@ -57,7 +60,20 @@
     En cualquier caso, deberás mostrar el \textbf{diagrama E/R} y su
     correspondiente traducción. Es importante que muetres tanto las 
     \textbf{restricciones de entidad} como las de \textbf{integridad referencial}.
-
+    
+    \begin{figure}[H]
+    	\begin{center}
+    		\includegraphics[width=1\textwidth]{2b.png}
+    	\end{center}
+    	\caption{Modelo E-R para el Sistema de Información Geográfica.}
+    \end{figure}
+    
+    \begin{figure}[H]
+      \begin{center}
+      	\includegraphics[width=1\textwidth]{esquemaRelacionalGeo.jpeg}
+      \end{center}
+      \caption{Traducción del modelo E-R para el Sistema de Información Geográfica a  Esquema Relacional.}
+   \end{figure}
 
     \section{Lectura}
     Leer el artícula \textbf{Codd's 12 Rules for a RDBMS}. Explica con tus 
