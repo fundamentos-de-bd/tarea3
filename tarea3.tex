@@ -33,12 +33,77 @@
     \section{Preguntas de repaso}
     \begin{enumerate}[label = \alph*.]
         \item ¿Qué es una \textbf{relación} y qué características tiene?
+        
+            \textbf{R: }{Una relación es una representación de las 
+            interacciones que puede haber entre entidades que nos 
+            interesan dentro de la \textit{base de datos}. Está definida
+            como su homologo en matemáticas (Subconjunto del producto 
+            cartesiano...) considerando a las entidades o más especificamente
+            a sus atributos como las estructuras entre las que se define.\\
+            Las relaciones en el modelo E/R se caracterizan por:
+            \begin{enumerate}
+                \item \textbf{Grado} El número de entidades que involucran (no
+                necesariamente deben ser distintas).\\
+                Lineas que salen ó entran a la relación.
+                \item \textbf{Patricipación} Expresa si esta interacción ocurre
+                con todos los ejemplares de la entidad involucrada o no.\\
+                doble linea o linea simple.
+                \item \textbf{Cardinalidad} La 'proporción' entre ejemplares de
+                las entidades relacionadas, \textit{Uno} ó \textit{Muchos}. Por
+                ejemplo, Un Banco muchas Cuentas ó Un Banco un Gerente ó Muchas
+                tareas muchos alumnos.\\
+                Agregar una flecha al final de la linea tocando la entidad (Uno).
+                \item \textbf{Identificación} Cuando una relación conecta una 
+                entidad débil con la entidad fuerte que ayuda a la débil a 
+                identificarse usamos esto para denotar esta meta-relación.\\
+                Doble rombo.
+                \item \textbf{Atributos} En nuestros diesños podemos agregar
+                atributos a las Relaciones como si fueran entidades. Esto cambia
+                algunas cosas cuando se traduce y es preferible usar una entidad 
+                asociativa si se tienen muchos atributos. No hay llaves para 
+                Relaciones pero pueden ser todo lo demás.\\
+                Óvalos conectados.
+            \end{enumerate}
+            Aparte de esto, \textit{relación} también es el nombre que se le da a
+            una tabla en la Base de datos, así como se dice que los renglones son
+            tuplas y las columnas miembros/dominios.}
         \item ¿Qué es un \textbf{esquema de relación}?
+        
+            \textbf{R: }{¿Esto se refiere al esquema relacional? De ser así,
+            es una notación por 'Tuplas' que sirve para representar las 
+            tablas que se obtienen a partir de un diagrama E/R. Estas tuplas
+            son de la forma "Entidad(\underline{Llave},LlaveForánea,Atributo,...)"
+            y para generarlas se siguen algunas regals de traducción.}
         \item ¿Qué es una \textbf{llave primaria} ¿qué es una \textbf{llave 
         candidata}? ¿qué es una \textbf{llave mínima}? ¿qué es una \textbf{super
-        llave}
+        llave}?
+        
+            \textbf{R: }{Una llave primaria es un atributo o conjunto de atributos 
+            (por lo general mínimo) elegido para ser usado como medio para 
+            identificar de manera única a cada ejemplar de una relación (tabla).\\
+            Una llave candidata es una posible llave, es decir, un conjunto de 
+            atributos que podrían identificar a cada ejemplar de manera única. 
+            No necesariamente es la llave primaria, sea por alguna razón ó 
+            solamente como elección de diseño. Además, toda llave candidata garantiza
+            que ningún subconjunto dentro de ella es llave candidata.\\
+            Una llave mínima es la llave candidata de una relación con la propiedad
+            de tener el menor número de elementos (ser mínimo, no minimal).\\
+            Finalmente una superllave es similar a llave candidata, pero suprimiendo
+            la condición de no contener llaves. Es decir, cualquier cosa mientras
+            garantice que podría ser un identificador único.}
         \item ¿Qué restricciones impone una \textbf{llave primaria} y una llave 
         foránea al modelo de dato relacional?
+        
+            \textbf{R: }{En implementación, ambas son causa de restricción por las
+            políticas de mantenimiento e integridad referencial cuando se quiere 
+            hacer modificaciones. En el modelo relacional, una entidad no puede 
+            tener más de una llave primaria y esta llave primaria no debe ser usada
+            por ninguna otra relación en la BD. Las llaves foráneas son como monedas
+            de intercambio que se usan para que relaciones distintas puedan reconstruir
+            vínculos o asociarse con ejemplares de otras relaciones. Puede haber varias
+            llaves foráneas en una relación, todas perteneciendo a distintas relaciones.
+            Siempre se utiliza la llave primaria (o lo más cercano) como llave foránea
+            cuando es necesario pasarselo a otra relación.}
         \item Investiga cómo se traducen las \textbf{categorías} (presentes en
         el \textbf{modelos E/R}) al \textbf{modelos relacional}. Proporciona un 
         ejemplo.
