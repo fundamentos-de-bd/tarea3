@@ -91,35 +91,69 @@
     
     \begin{itemize}
     	\item\textbf{Regla 1 : The Information Rule}\\
-    	 Basicamente habla acerca de como se almacena la información y la forma en que se hace es a través una tabla.
-    	\item\textbf{Regla 2 : Guaranteed Access Rule}\\
-    	
-    	En esta regla se menciona la importancia de un identificador o llave primaria, además de  que los datos sean atomicos ya que son de suma importancia para poder garantizar la accesibilidad a los datos.
-    	
+        Toda la información debe estar representada en el esquema lógico de la 
+        base de datos. Y debe estar represetada como entradas de una tabla.\\
+        Si los datos no están en el esquema lógico, entonces no sería accesibles
+        usando los mecanismos de consulta del sistema, por lo que es como si 
+        los datos no estuvieran ahí.\\
+        Esto se puede lograr en SMBD forzando a que la única manera de almacenar 
+        datos sea a través de inserciones en tablas.
+    	\item\textbf{Regla 2 : Guaranteed Access Rule}
+        Toda la información debe ser accesible. Esto es que todo dato tenga un 
+        identificador o llave primaria, además de  que los datos sean atomicos 
+        ya que son de suma importancia para poder garantizar la accesibilidad a 
+        los datos.\\
+        Esto es importante porque no poder acceder a los datos es equivalente a
+        no tener los datos. \\
+        Sería posible que un SMBD pueda garantizar esto si a todos los datos 
+        insertdos bien se les exige una llave al momento o se les asigna un 
+        llave sintética al ser ingresados.\\
+        Aunque forzar lo segundo podría llevar bien a redundancia o que ya no 
+        se refleje totalmente el esquema lógico de la base de datos.
     	\item\textbf{Regla 3: Systematic Treatment of NULL Values}\\
-    	
-    	Esta regla hace referencia a los valores nulos, que no representan una cadena vacía o un cero sino que son valores desconocidos por lo tanto el RDBMS admitirá un caracter distinto para representar dichos valores nulos. Los valores nulos indican que no se tiene información de ese campo, además los nulos deben propagarse ante las operaciones matematicas y de cadenas, es decir si sumamos un valor nulo con algún elemento distinto de nulo el resultado sera un valor nulo.
-    	
+        Debe existir un valor NULL diferente de todos los demás posibles datos 
+        que represente la ausencia de información y éste debe ser tratado de la 
+        misma manera que todos los demás datos por el sistema.\\
+        Esto es importante porque en otro caso no se podría represetar la 
+        ausencia de información.\\
+        Esto se puede lograr en un SMBD simplemente añadiendo el caso.
     	\item\textbf{Regla 4: Dynamic Online Catalog Based on the Relational Model}\\
-    	Esta regla menciona que la base de datos debe ser autodescriptiva para poder por lo tanto permite utilizar 
+        La estructura de la base de dato debe estar almacenada de igual manera 
+        que el resto de los datos, para que pueda ser accesidad por usuarios usando
+        los mecanismos ordinarios de consulta.
     	
     	\item\textbf{Regla 5: Comprehensive Data Sublanguage Rule}\\
-    	
+        Se debe tener soporte para algún lenguaje formal que permita definir tipos
+        de datos, hacer consultas, transacciones, y definir restricciones.
     	\item\textbf{Regla 6: View Updating Rule}\\
-    	
+        Todas las vistas que son teóricamente actualizables deben de poder ser 
+        actualizadas.
     	\item\textbf{Regla 7: High-Level Insert, Update, and Delete}\\
-    	
+        Las operaciones de modificación de la base de datos deben estar 
+        disponilbes en términos de conjuntos de tuplas, no de tuplas individuales.
     	\item\textbf{Regla 8: Physical Data Independence}\\
-    	Esta regla menciona que a nivel fisico que es donde la base de datos almacena e implementa los metodos de acceso a los datos es independiente de la manera lógica en que se accede, por lo tanto los cambios que se hagan a nivel físico no le afecta al usuario puesto que al usuario no le interesa saber como se almacena o como se acceden a los datos. 
-    	
+        Esta regla menciona que a nivel fisico que es donde la base de datos 
+        almacena e implementa los metodos de acceso a los datos es independiente 
+        de la manera lógica en que se accede, por lo tanto los cambios que se 
+        hagan a nivel físico no le afecta al usuario puesto que al usuario no le 
+        interesa saber como se almacena o como se acceden a los datos. 
     	\item\textbf{Regla 9: Logical Data Independence}\\
-    	
+        El esquema de la base de datos debe ser independiente de las aplicaciones
+        que utilizan la base de datos. Esto es que se pueda modificar la estrucutura
+        lógica de la base de datos sin necesidad de modificar las aplicaciones que
+        la utilizan.
     	\item\textbf{Regla 10: Integrity Independence}\\
-    	
+        Las restricciones de integridad deben de ser independientes del 
+        funcionamiento de aplicaciones. Esto es que esas restricciones se puedan
+        modificar sin necesidad de modificar las aplicaciones que utilizan la 
+        base de datos.
     	\item\textbf{Regla 11: Distribution Independence}\\
-    	
+        Una base de datos distribuida debe ser idéntica a una no distribuida 
+        desde el punto de vista del usuario.
     	\item\textbf{Regla 12: Non-Subversion Rule}\\
-    	
+        Indica que no debe existir un mecasnimo para violar las restricciones.
+        Es decir, en caso de que se propocione acceso de bajo nivel al sistema, 
+        esta interfaz no debe ser capaz de modificar sin restricciones.
     	
     \end{itemize}
 \end{document}
